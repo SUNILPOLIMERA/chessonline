@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    background: #312e2b;
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid gray;
+    color: whitesmoke;
+}
+
+.content{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+#turnIndicator{
+    color: whitesmoke;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.chessboard{
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.square{
+    width: 60px;
+    height: 60px;
+    border: 0.5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dark{
+    background-color: #b58863;
+}
+
+.light{
+    background-color: #f0d9b5;
+}
+
+.square:hover{
+    background-color: #b0a69dcd;
+}
+
+.selected{
+    background: #baca44 !important;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+@keyframes rainbow {
+100%,
+0% {
+    color: rgb(255, 0, 0);
+}
+8% {
+    color: rgb(255, 127, 0);
+}
+16% {
+    color: rgb(255, 255, 0);
+}
+25% {
+    color: rgb(127, 255, 0);
+}
+33% {
+    color: rgb(0, 255, 0);
+}
+41% {
+    color: rgb(0, 255, 127);
+}
+50% {
+    color: rgb(0, 255, 255);
+}
+58% {
+    color: rgb(0, 127, 255);
+}
+66% {
+    color: rgb(0, 0, 255);
+}
+75% {
+    color: rgb(127, 0, 255);
+}
+83% {
+    color: rgb(255, 0, 255);
+}
+91% {
+    color: rgb(255, 0, 127);
+}
+}
+
+.winner {
+animation: rainbow 4s infinite linear;
+}
